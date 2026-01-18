@@ -29,7 +29,7 @@ func apply_move(index: int, player: String) -> bool:
 func undo_last_move() -> Dictionary:
 	if move_stack.is_empty():
 		return {}
-	var last_move: Dictionary = move_stack.pop_back()
+	var last_move := move_stack.pop_back()
 	cells[last_move["index"]] = ""
 	return last_move
 

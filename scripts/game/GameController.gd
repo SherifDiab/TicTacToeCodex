@@ -146,9 +146,9 @@ func _on_rewarded_requested() -> void:
 	Ads.show_rewarded(
 		func():
 			_apply_rewarded_undo(),
-		func():
-			game_over_panel.show_reward_message("Ad not available")
-	)
+			func():
+				game_over_panel.show_reward_message("Ad not available")
+		)
 
 func _apply_rewarded_undo() -> void:
 	_reward_used = true
