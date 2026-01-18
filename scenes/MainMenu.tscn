@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/MainMenu.gd" id=1]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="MainLayout" type="VBoxContainer" parent="."]
+anchor_left = 0.07
+anchor_top = 0.06
+anchor_right = 0.93
+anchor_bottom = 0.94
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+alignment = 1
+
+[node name="Title" type="Label" parent="MainLayout"]
+text = "Tic-Tac-Toe"
+horizontal_alignment = 1
+
+[node name="OptionsPanel" type="PanelContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 180)
+
+[node name="OptionsContainer" type="VBoxContainer" parent="MainLayout/OptionsPanel"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+
+[node name="DifficultyRow" type="HBoxContainer" parent="MainLayout/OptionsPanel/OptionsContainer"]
+
+[node name="DifficultyLabel" type="Label" parent="MainLayout/OptionsPanel/OptionsContainer/DifficultyRow"]
+text = "Difficulty"
+size_flags_horizontal = 3
+
+[node name="DifficultyOption" type="OptionButton" parent="MainLayout/OptionsPanel/OptionsContainer/DifficultyRow"]
+size_flags_horizontal = 3
+
+[node name="SymbolRow" type="HBoxContainer" parent="MainLayout/OptionsPanel/OptionsContainer"]
+
+[node name="SymbolLabel" type="Label" parent="MainLayout/OptionsPanel/OptionsContainer/SymbolRow"]
+text = "Play As"
+size_flags_horizontal = 3
+
+[node name="SymbolOption" type="OptionButton" parent="MainLayout/OptionsPanel/OptionsContainer/SymbolRow"]
+size_flags_horizontal = 3
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="MainLayout"]
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MainLayout/ButtonsContainer"]
+text = "Play vs Engine"
+size_flags_horizontal = 3
+
+[node name="StatsPanel" type="PanelContainer" parent="MainLayout"]
+custom_minimum_size = Vector2(0, 160)
+
+[node name="StatsContainer" type="VBoxContainer" parent="MainLayout/StatsPanel"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+
+[node name="StatsTitle" type="Label" parent="MainLayout/StatsPanel/StatsContainer"]
+text = "Stats"
+
+[node name="StatsLabel" type="Label" parent="MainLayout/StatsPanel/StatsContainer"]
+text = "Wins: 0\nLosses: 0\nDraws: 0"
+
+[node name="ResetStatsButton" type="Button" parent="MainLayout/StatsPanel/StatsContainer"]
+text = "Reset Stats"
+
+[node name="ConfirmReset" type="ConfirmationDialog" parent="."]
+text = "Reset all stats?"
+
